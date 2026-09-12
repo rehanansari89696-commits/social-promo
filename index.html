@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="hi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Social Promo - Payment</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header><div class="brand">🚀 Social Promo</div><span>Secure Checkout</span></header>
+<main>
+<section class="hero"><h1>Apne Content ko Promote Karein</h1><p>Package select karein aur UPI se payment karein.</p></section>
+<section class="packages">
+<div class="card"><h2>Starter Promotion</h2><p>Social media promotional campaign</p><b>₹49</b><button onclick="pay('Starter Promotion',49)">Order Now</button></div>
+<div class="card"><h2>Video Promotion</h2><p>10K promotional impressions campaign</p><b>₹8</b><button onclick="pay('Video Promotion',8)">Order Now</button></div>
+<div class="card"><h2>Engagement Campaign</h2><p>1K promotional engagement campaign</p><b>₹38</b><button onclick="pay('Engagement Campaign',38)">Order Now</button></div>
+</section>
+</main>
+<div class="modal" id="modal"><div class="box">
+<button class="close" onclick="closePay()">×</button>
+<h2 id="title"></h2><h3 id="amount"></h3>
+<img src="qr.jpg" class="qr" alt="UPI QR Code">
+<p>Paytm/UPI app se QR scan karke payment karein.</p>
+<button class="demo" onclick="demoSuccess()">Payment Successful (Demo)</button>
+<div id="status"></div>
+</div></div>
+<script>
+function pay(n,a){title.textContent=n;amount.textContent='Total: ₹'+a;status.textContent='';modal.style.display='flex'}
+function closePay(){modal.style.display='none'}
+function demoSuccess(){status.textContent='✓ Payment Successful | Order ID: ORD-'+Date.now()}
+</script>
+</body></html>
